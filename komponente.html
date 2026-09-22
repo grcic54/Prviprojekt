@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komponente</title>
+    <link rel = "stylesheet" href="dist/output.css">
+  </head>    
+</head>
+<body>
+    <body class = "bg-slate-100 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+
+        <div id="kartice" class="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            Privremeno...
+        </div>
+    </body>
+
+    <template id="kartica">
+        <article class="card flex flex-col">
+            <h2 class="text-lg font-bold"></h2>
+            <p class="flex-1 mt-2 text-slate-600 dark:text-slate-400"></p>
+            <a href="#" class="btn-primary">Prijavi se</a>
+        </article>
+
+    </template>
+<script>
+    const radionice = [
+    ["Radionica 1", "Opis 1"],
+    ["Radionica 2", "Opis 2"],
+    ["Radionica 3", "Opis 3"],
+    ["Radionica 1", "Opis 1"],
+    ["Radionica 2", "Opis 2"],
+    ["Radionica 3", "Opis 3"],
+    ["Radionica 1", "Opis 1"],
+    ["Radionica 2", "Opis 2"],
+    ["Radionica 3", "Opis 3"],
+    ];
+
+    for (const [naslov, opis] of radionice) {
+        const kopija = document.querySelector("#kartica").content.cloneNode(true);
+        kopija.querySelector("h2").textContent = naslov;
+        kopija.querySelector("p").textContent = opis;
+        document.querySelector("#kartice").append(kopija);
+    }
+</script>
+</html>
